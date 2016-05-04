@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>F__K_U</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+
+    <!-- Custom Fonts -->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css" type="text/css">
+
+    <!-- Plugin CSS -->
+    <link rel="stylesheet" href="css/animate.min.css" type="text/css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/creative.css" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+ <!-- The firebase library -->
+  <script src="https://cdn.firebase.com/js/client/2.4.2/firebase.js"></script>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
+
+<script src="js/jquery.js"></script>
+
+
+</head>
+
+<body id="page-top" >
+
+    <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand page-scroll" href="#page-top">F*%K ME</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+
+    <header>
+        <div class="header-content">
+            <div class="header-content-inner">
+                <h1><form class="form-inline" role="form" onsubmit="return doIt()">
+  <div class="form-group">
+    <label for="messageInput">I am</label>
+    <input type="text" style="display: inline; background-color:rgba(0, 0, 0, 0); border-top:none; border-left:none; border-right: none; border-top:5px; outline:none; width:50%;" id='messageInput1' placeholder="">
+  </div>
+  <div class="form-group">
+    <label for="messageInput2">I am</label>
+    <input type="text" style="display: inline; background-color:rgba(0, 0, 0, 0); border-top:none; border-left:none; border-right: none; border-top:5px; outline:none; width:50%;" id='messageInput2' placeholder="">
+    </div>
+  <br>I am unique.<br>F*%K U.<br>
+  <button type="submit" class="btn btn-primary btn-xl">Submit</button>
+</form></h1>
+                
+                <p><br>Mass surveillance and media profiling decides who you are from your activites online. They can then decide how to control you. Help us subvert that. <br>Post annonymously to our Twitterbot who you really are, and build a profile we define.</p>
+                
+            </div>
+        </div>
+    </header>
+<div id=messagesDiv></div>
+<center>
+<a class="twitter-timeline" href="https://twitter.com/__noiro__" width="100%" data-chrome="transparent nofooter" data-widget-id="727951560408358912">Tweets by @__noiro__</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+</center>
+
+<script>
+    
+
+    function initiate_geolocation() {
+        navigator.geolocation.getCurrentPosition(handle_geolocation_query);
+    }
+
+    function handle_geolocation_query(position){
+
+
+        console.log(position.coords.latitute);
+        var pos = (position.coords.latitude +", " position.coords.longitud);
+        //document.getElementById('messageInput2').placeholder=pos;
+        //$('<div/>').text(pos).appendTo($('#messageInput2'));
+    }
+</script>
+<script>
+    var myDataRef = new Firebase('https://fcku.firebaseio.com/');
+    function doIt(){
+
+
+        
+     
+            
+          var name = $('#messageInput2').val();
+          var text = $('#messageInput1').val();
+          
+          
+        console.log(name);
+        console.log(text);
+        myDataRef.push({name: name, text: text});
+      // myDataRef.on('child_added', function(snapshot) {
+      //   var message = snapshot.val();
+      //   displayChatMessage(message.name, message.text);
+      // });
+      // function displayChatMessage(name, text) {
+      //   $('<div/>').text(text).prepend($('<em/>').text(name+': ')).appendTo($('#messagesDiv'));
+      //   $('#messagesDiv')[0].scrollTop = $('#messagesDiv')[0].scrollHeight;
+      // };
+}
+    </script>
+   
+
+   
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="js/jquery.easing.min.js"></script>
+    <script src="js/jquery.fittext.js"></script>
+    <script src="js/wow.min.js"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script src="js/creative.js"></script>
+
+</body>
+
+</html>
